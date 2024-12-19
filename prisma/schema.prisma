@@ -1,0 +1,92 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider  = "postgresql"
+  url       = env("DATABASE_URL")
+  directUrl = env("DIRECT_URL")
+}
+
+model User {
+  id           String    @id @default(uuid())
+  name         String
+  email        String    @unique
+  password     String
+  access_token String?
+  role         UserRole
+  created_at   DateTime  @default(now())
+  updated_at   DateTime  @updatedAt
+  blogs        Blog[]
+  products     Product[]
+
+  @@map("users")
+}
+
+model Blog {
+  id           String       @id @default(uuid())
+  name         String
+  description  String?
+  images       Json?
+  categoryId   String
+  userId       String
+  createdAt    DateTime     @default(now())
+  updatedAt    DateTime     @updatedAt
+  categoryblog CategoryBlog @relation(fields: [categoryId], references: [id])
+  user         User         @relation(fields: [userId], references: [id])
+
+  @@map("blogs")
+}
+
+model CategoryBlog {
+  id        String   @id @default(uuid())
+  name      String
+  createdAt DateTime @default(now())
+  updatedAt DateTime @updatedAt
+  blogs     Blog[]
+
+  @@map("categoryblogs")
+}
+
+model Product {
+  id           String   @id @default(uuid())
+  title        String
+  subtitle     String
+  description  String?
+  sellingPoint String
+  productTerms String
+  productGuide String
+  images       Json?
+  createdAt    DateTime @default(now())
+  updatedAt    DateTime @updatedAt
+  userId       String
+  
+  user         User     @relation(fields: [userId], references: [id])
+
+  @@map("products")
+}
+
+model File {
+  id String @id @default(uuid())
+
+  filename  String   @unique
+  fileblob  Bytes
+  createdAt DateTime @default(now())
+
+  @@map("files")
+}
+
+model Report {
+  id        String   @id @default(uuid())
+  name      String
+  url       String
+  createdAt DateTime @default(now())
+
+  @@map("report")
+}
+
+
+enum UserRole {
+  ADMIN
+  USER
+}
