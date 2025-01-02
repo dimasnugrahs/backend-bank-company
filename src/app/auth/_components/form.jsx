@@ -119,7 +119,7 @@ export default function Form() {
         <input
           type="submit"
           value="Sign In"
-          className="w-full cursor-pointer rounded-lg border border-primary bg-primary p-4 text-white transition hover:bg-opacity-90"
+          className="w-full cursor-pointer rounded-lg border border-blue-500 bg-blue-500 p-4 text-white transition hover:bg-opacity-90"
         />
       </div>
 

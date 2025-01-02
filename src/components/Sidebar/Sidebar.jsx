@@ -248,6 +248,38 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
                 </Link>
               </li>
               {/* <!-- Menu Item Product --> */}
+
+              {/* <!-- Menu Item Category --> */}
+
+              {/* <!-- Menu Item Report --> */}
+              {/* <li>
+                <Link
+                  href="/report"
+                  className={`group relative flex items-center gap-2.5 rounded-sm px-4 py-2 font-medium text-bodydark1 duration-300 ease-in-out hover:bg-slate-700 ${
+                    pathname.startsWith("/report") && "bg-graydark bg-slate-700"
+                  }`}
+                >
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 16 16"
+                  >
+                    <path
+                      fill="currentColor"
+                      fillRule="evenodd"
+                      d="M2.5 1.045a.5.5 0 0 0-.5.5v10.91a.5.5 0 0 0 .5.5h9a.5.5 0 0 0 .5-.5V5.364a.5.5 0 0 0-.152-.36L7.911 1.188a.5.5 0 0 0-.348-.142zm7.766 3.819L8.063 2.727v2.137zM6 5.5H4v-1h2zM10 8H4V7h6zm-6 2.5h6v-1H4z"
+                      clipRule="evenodd"
+                    />
+                    <path
+                      fill="currentColor"
+                      d="M13 7.5V14H4.5v1h9a.5.5 0 0 0 .5-.5v-7z"
+                    />
+                  </svg>
+                  Report
+                </Link>
+              </li> */}
+              {/* <!-- Menu Item Blog --> */}
             </ul>
           </div>
         </nav>

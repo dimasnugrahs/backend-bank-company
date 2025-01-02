@@ -76,16 +76,6 @@ model File {
   @@map("files")
 }
 
-model Report {
-  id        String   @id @default(uuid())
-  name      String
-  url       String
-  createdAt DateTime @default(now())
-
-  @@map("report")
-}
-
-
 enum UserRole {
   ADMIN
   USER
