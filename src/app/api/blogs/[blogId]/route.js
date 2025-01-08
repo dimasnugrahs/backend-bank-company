@@ -12,6 +12,9 @@ export async function GET(req, { params }) {
       where: {
         id: blogId,
       },
+      include: {
+        categoryblog: true,
+      },
     });
 
     //Pengecekan apakah content blog tersedia
